@@ -25,14 +25,12 @@ Puppet::Type.newtype(:append_if_no_such_line) do
       return :outofsync if not File.exists? resource[:file]
       File.readlines(resource[:file]).map { |l|
         l.chomp
-        }.include?(resource[:line]) ? :insync : :outofsync
-      end
+      }.include?(resource[:line]) ? :insync : :outofsync
+    end
 
-      newvalue :outofsync
-      newvalue :insync do
-        File.open(resource[:file], 'a') { |fd| fd.puts resource[:line] }
-      end
-
+    newvalue :outofsync
+    newvalue :insync do
+      File.open(resource[:file], 'a') { |fd| fd.puts resource[:line] }
     end
 
   end
