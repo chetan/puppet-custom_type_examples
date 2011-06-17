@@ -1,0 +1,13 @@
+This is an example of a module containing a custom type and a single provider implementation. If you only plan on having a single provider, no need to use this method. See the 'append' module instead.
+
+This example was taken from:
+
+http://projects.puppetlabs.com/projects/puppet/wiki/Development_Complete_Resource_Example
+
+
+Usage:
+
+$ puppet apply --verbose --modulepath /tmp/puppet_custom_type_example \
+simplefile/manifests/init.pp
+
+Add the --debug flag for more output.

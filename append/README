@@ -1,0 +1,13 @@
+This is an example of a module containing a custom type with no provider implementation. If you don't need multiple backends, go ahead and use this method.
+
+This example was taken from:
+
+http://projects.puppetlabs.com/projects/1/wiki/Development_Practical_Types
+
+
+Usage:
+
+$ puppet apply --verbose --modulepath /tmp/puppet_custom_type_example \
+append/manifests/init.pp
+
+Add the --debug flag for more output.
