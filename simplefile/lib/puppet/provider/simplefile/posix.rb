@@ -1,3 +1,17 @@
+
+# NOTE: the full path of this file is important and is required by Puppet's
+#       autoloading mechanism.
+#
+#       Providers must be placed in the following path:
+#       lib/puppet/provider/<type>/<provider>.rb
+#
+#       Puppet will essentially require lib/puppet/provider/<type>/*.rb
+#       for each type found in lib/puppet/type/
+
+
+# example for loading arbitrary code shipped with your module
+require File.join(File.dirname(__FILE__), "../../../", "foobar")
+
 Puppet::Type.type(:simplefile).provide(:posix, :parent => Puppet::Provider) do
 
   desc "Normal Unix-like POSIX support for file management."
